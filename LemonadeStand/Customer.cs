@@ -3,8 +3,12 @@ namespace LemonadeStand
 {
 	public class Customer
 	{
-		public Customer()
+		int PotentialCustomers;
+		public Weather
+
+		public Customer(int PotentialCustomers)
 		{
+			if ()
 		}
 	}
 }
