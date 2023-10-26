@@ -4,7 +4,9 @@
     {
         static void Main(string[] args)
         {
-            
+            Weather weather = new Weather();
+            weather.ActualWeather();
+            weather.Forecast();
         }
     }
 }

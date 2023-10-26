@@ -12,9 +12,9 @@ namespace LemonadeStand
         List<string> weatherconditions;
         string predictedForecast;
 
-        public Weather(int temperature, string condition)
+        public Weather()
 		{
-            Random rand = new Random();
+            rand = new Random();
             this.temperature = rand.Next(55, 85);
             condition = "";
             weatherconditions = new List<string> { "Rainy", "Cloudy", "Sunny"};
