@@ -7,10 +7,10 @@ namespace LemonadeStand
 	public class Weather
 	{
         Random rand;
-        int temperature;
-        string condition;
+       public int temperature;
+       public string condition;
         List<string> weatherconditions;
-        string predictedForecast;
+       public string predictedForecast;
 
         public Weather()
 		{
