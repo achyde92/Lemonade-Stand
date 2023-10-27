@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -13,7 +14,6 @@ namespace LemonadeStand
         public Wallet wallet;
         public Recipe recipe;
         public string name;
-        public Store store;
 
         // constructor (SPAWNER)
         public Player(string name)
@@ -35,10 +35,47 @@ namespace LemonadeStand
 
         public void PurchaseSupplies()
         {
-            if ()
+            int lemonsToPurchase;
+
+            Console.WriteLine("How many lemons would you like to buy?");
+            lemonsToPurchase = int.Parse(Console.ReadLine());
+
+            if (lemonsToPurchase > 0)
             {
-                Store.SellLemons();
+                inventory.AddLemonsToInventory(lemonsToPurchase);
             }
+
+            int sugarToPurchase;
+
+            Console.WriteLine("How much sugar would you like to buy?");
+            sugarToPurchase = int.Parse(Console.ReadLine());
+
+            if (sugarToPurchase > 0)
+            {
+                inventory.AddSugarCubesToInventory(sugarToPurchase);
+            }
+
+            int iceCubesToPurchase;
+
+            Console.WriteLine("How many ice cubes would you like to buy?");
+            iceCubesToPurchase = int.Parse(Console.ReadLine());
+
+            if (iceCubesToPurchase > 0)
+            {
+                inventory.AddIceCubesToInventory(iceCubesToPurchase);
+            }
+
+            int cupsToPurchase;
+
+            Console.WriteLine("How many cups would you like to buy?");
+            cupsToPurchase = int.Parse(Console.ReadLine());
+
+            if (cupsToPurchase > 0)
+            {
+                inventory.AddCupsToInventory(cupsToPurchase);
+            }
+          
+                
         }
     }
 }

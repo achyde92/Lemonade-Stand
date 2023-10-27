@@ -29,7 +29,7 @@ namespace LemonadeStand
         {
             Console.WriteLine($"Your recipe currently consists of:\n{numberOfLemons} lemons per pitcher\n{numberOfSugarCubes} sugar cubes per pitcher\n{numberOfIceCubes} ice cubes per pitcher");
         }
-        public void RecipeVariation()
+        public void RecipeInput()
         {
             Console.WriteLine("How many Ice Cubes in the recipe?");
             numberOfIceCubes = int.Parse(Console.ReadLine());
@@ -38,6 +38,10 @@ namespace LemonadeStand
             Console.WriteLine("How many Sugar Cubes in the recipe?");
             numberOfSugarCubes = int.Parse(Console.ReadLine());
         }
-
+        public void PriceInput()
+        {
+            Console.WriteLine("How much will each cup cost?");
+            price = double.Parse(Console.ReadLine());
+        }
     }
 }

@@ -14,8 +14,7 @@ namespace LemonadeStand
 
 		public void StartDay()
 		{
-			FootTraffic();
-			SimulatingCustomersWalkingBy();
+	
 		}
 
 		public void CreateCustomers(int numOfCustomers)
