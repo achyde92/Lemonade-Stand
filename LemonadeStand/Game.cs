@@ -10,7 +10,7 @@ namespace LemonadeStand
 		int currentday;
 		Store store;
 		Recipe recipe;
-		double transactionAmount;
+		Day day;
 
 		public Game()
 		{
@@ -24,25 +24,27 @@ namespace LemonadeStand
 			{
 				Day day = new Day();
 				day.StartDay();
-				EndDay();
-
-                public void EndDay()
-                {
-                    double income = recipe.price * day.customersWhoBought;
-
-                    if (income > .transactionAmount)
-                    {
-                        Console.WriteLine($"You profited {income - transactionAmount = store.SellCups(player)}");
-                    }
-                    else if (income < store.transactionAmount)
-                    {
-                        Console.WriteLine($"Your losses totaled {income - store.transactionAmount}");
-                    }
-					currentday++;
-                }
+				EndDay(); 
             }
 
-		}
+			//Above I "tried" to do/Use abstraction to hide the details so the only methods would be start and end day.
+
+            public void EndDay()
+            {
+                double income = recipe.price * day.customersWhoBought;
+				double transactionAmount = 0;
+
+                if (income > .transactionAmount)
+                {
+                    Console.WriteLine($"You profited {income - transactionAmount = store.SellCups(player)}");
+                }
+                else if (income < store.transactionAmount)
+                {
+                    Console.WriteLine($"Your losses totaled {income - store.transactionAmount}");
+                }
+                currentday++;
+            }
+
 
 		
 	}

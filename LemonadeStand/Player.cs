@@ -33,6 +33,8 @@ namespace LemonadeStand
             string name = Console.ReadLine();
         }
 
+        // Below I tried to use abstraction again using Console Read/WriteLine
+
         public void PurchaseSupplies()
         {
             int lemonsToPurchase;

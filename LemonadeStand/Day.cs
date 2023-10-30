@@ -8,8 +8,9 @@ namespace LemonadeStand
 		Wallet wallet;
 		Store store;
 		Player player;
+        internal double customersWhoBought;
 
-		public Day()
+        public Day()
 		{
 			customers = new List<Customer>();
 			weather = new Weather();
