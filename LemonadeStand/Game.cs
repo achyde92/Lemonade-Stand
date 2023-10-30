@@ -9,7 +9,18 @@ namespace LemonadeStand
 
 		public Game()
 		{
+			player = new Player();
+			days = new List<Day>();
+			currentday = 0;
+
+			while (currentday <= 7)
+			{
+
+			}
+
 		}
+
+		
 	}
 }
 

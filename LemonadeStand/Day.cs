@@ -5,17 +5,22 @@ namespace LemonadeStand
 	{
 		Weather weather;
 		public List<Customer> customers;
+		Wallet wallet;
 
 		public Day()
 		{
 			customers = new List<Customer>();
 			weather = new Weather();
+			wallet = new Wallet();
 		}
 
 		public void StartDay()
 		{
-	
-		}
+            Weather weather = new Weather();
+            weather.Forecast();
+            weather.ActualWeather();
+
+        }
 
 		public void CreateCustomers(int numOfCustomers)
 		{
@@ -82,6 +87,20 @@ namespace LemonadeStand
 				}
 			}
 			return potentialfootTraffic;
+		}
+		public void EndDay()
+		{
+			double income;
+			double transactionAmount;
+
+			if (wallet.AcceptMoney(income) > wallet.PayMoneyForItems(transactionAmount))
+			{
+				Console.WriteLine($"You profited {wallet.AcceptMoney() - wallet.PayMoneyForItems()}");
+			}
+			else if (wallet.AcceptMoney() < wallet.PayMoneyForItems())
+			{
+				Console.WriteLine($"Your losses totaled {wallet.AcceptMoney() - wallet.PayMoneyForItems()}");
+			}
 		}
 	}
 }
