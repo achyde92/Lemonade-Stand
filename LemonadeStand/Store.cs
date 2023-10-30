@@ -24,7 +24,7 @@ namespace LemonadeStand
         }
 
         // member methods (CAN DO)
-        public void SellLemons(Player player)
+        public double SellLemons(Player player)
         {
             int lemonsToPurchase = UserInterface.GetNumberOfItems("lemons");
             double transactionAmount = CalculateTransactionAmount(lemonsToPurchase, pricePerLemon);
@@ -33,9 +33,10 @@ namespace LemonadeStand
                 player.wallet.PayMoneyForItems(transactionAmount);
                 player.inventory.AddLemonsToInventory(lemonsToPurchase);
             }
+            return transactionAmount;
         }
 
-        public void SellSugarCubes(Player player)
+        public double SellSugarCubes(Player player)
         {
             int sugarToPurchase = UserInterface.GetNumberOfItems("sugar");
             double transactionAmount = CalculateTransactionAmount(sugarToPurchase, pricePerSugarCube);
@@ -44,9 +45,10 @@ namespace LemonadeStand
                 PerformTransaction(player.wallet, transactionAmount);
                 player.inventory.AddSugarCubesToInventory(sugarToPurchase);
             }
+            return transactionAmount;
         }
 
-        public void SellIceCubes(Player player)
+        public double SellIceCubes(Player player)
         {
             int iceCubesToPurchase = UserInterface.GetNumberOfItems("ice cubes");
             double transactionAmount = CalculateTransactionAmount(iceCubesToPurchase, pricePerIceCube);
@@ -55,9 +57,10 @@ namespace LemonadeStand
                 PerformTransaction(player.wallet, transactionAmount);
                 player.inventory.AddIceCubesToInventory(iceCubesToPurchase);
             }
+            return transactionAmount;
         }
 
-        public void SellCups(Player player)
+        public double SellCups(Player player)
         {
             int cupsToPurchase = UserInterface.GetNumberOfItems("cups");
             double transactionAmount = CalculateTransactionAmount(cupsToPurchase, pricePerCup);
@@ -66,6 +69,7 @@ namespace LemonadeStand
                 PerformTransaction(player.wallet, transactionAmount);
                 player.inventory.AddCupsToInventory(cupsToPurchase);
             }
+            return transactionAmount;
         }
 
         private double CalculateTransactionAmount(int itemCount, double itemPricePerUnit)
